@@ -1,4 +1,6 @@
 {
   "name": "skills",
-  "skills": []
+  "skills": [
+    "./skills/engineering/integration-audit"
+  ]
 }
