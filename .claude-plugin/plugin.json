@@ -1,0 +1,6 @@
+{
+  "name": "skills",
+  "skills": [
+    "./skills/engineering/dead-code-hunter"
+  ]
+}
