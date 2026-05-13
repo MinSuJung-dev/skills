@@ -10,7 +10,16 @@ claude plugin install github:MinSuJung-dev/skills
 
 ## Skills
 
-Coming soon.
+### Engineering
+
+| Skill | Description |
+|-------|-------------|
+| [integration-audit](./skills/engineering/integration-audit/SKILL.md) | Audit whether a recently implemented feature is actually complete — finds dead handlers, stubs, orphaned routes, half-wired mutations, and lifecycle leaks |
+| [investigate](./skills/engineering/investigate/SKILL.md) | Disciplined bug investigation loop — build a feedback signal, reproduce, hypothesize falsifiably, instrument, fix, and persist findings across sessions |
+
+## Usage (other AI agents)
+
+For agents without a plugin system (Codex, Cursor Rules, etc.), paste the contents of the relevant `SKILL.md` directly into your system prompt or rules file.
 
 ## Contributing
 
