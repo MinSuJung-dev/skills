@@ -13,7 +13,7 @@ Small, composable, and stack-agnostic. Works with Claude Code, Codex, Cursor, or
 마켓플레이스를 먼저 추가한 후 설치:
 
 ```bash
-claude plugin marketplace add github:MinSuJung-dev/skills
+claude plugin marketplace add MinSuJung-dev/skills
 claude plugin install skills
 ```
 
