@@ -10,11 +10,7 @@ claude plugin install github:MinSuJung-dev/skills
 
 ## Skills
 
-### Engineering
-
-| Skill | Description |
-|-------|-------------|
-| [dead-code-hunter](./skills/engineering/dead-code-hunter/SKILL.md) | Find incomplete implementations — empty handlers, stubs, disconnected routes, fake data |
+Coming soon.
 
 ## Contributing
 
