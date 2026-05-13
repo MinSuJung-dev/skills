@@ -64,6 +64,7 @@ AI가 화면을 그리고, 컴포넌트를 만들고, 파일을 생성한다. �
 |-------|------|
 | [integration-audit](./skills/engineering/integration-audit/SKILL.md) | 구현이 실제로 완성됐는지 감사 — 빈 핸들러, 끊긴 라우트, 반쪽짜리 뮤테이션, 더미 데이터 탐지 |
 | [investigate](./skills/engineering/investigate/SKILL.md) | 재현 루프 기반 버그 디버깅 — 가설 추적, 세션 간 버그 카드 유지 |
+| [knowledge-prune](./skills/engineering/knowledge-prune/SKILL.md) | .bugs/ 지식 베이스 정리 및 최적화 — 중복 탐지, 패턴 통합, 오래된 레코드 정리 |
 
 ---
 

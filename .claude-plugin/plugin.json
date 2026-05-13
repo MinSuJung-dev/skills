@@ -2,6 +2,7 @@
   "name": "skills",
   "skills": [
     "./skills/engineering/integration-audit",
-    "./skills/engineering/investigate"
+    "./skills/engineering/investigate",
+    "./skills/engineering/knowledge-prune"
   ]
 }
