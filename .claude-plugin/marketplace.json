@@ -1,0 +1,15 @@
+{
+  "name": "skills",
+  "owner": {
+    "name": "MinSuJung-dev",
+    "url": "https://github.com/MinSuJung-dev"
+  },
+  "plugins": [
+    {
+      "name": "skills",
+      "source": "./",
+      "description": "AI-agnostic coding agent skills — integration-audit and investigate.",
+      "version": "1.0.0"
+    }
+  ]
+}

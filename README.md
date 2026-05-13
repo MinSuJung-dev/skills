@@ -10,11 +10,14 @@ Small, composable, and stack-agnostic. Works with Claude Code, Codex, Cursor, or
 
 ### Claude Code
 
+마켓플레이스를 먼저 추가한 후 설치:
+
 ```bash
-claude plugin install github:MinSuJung-dev/skills
+claude plugin marketplace add github:MinSuJung-dev/skills
+claude plugin install skills
 ```
 
-그런 다음 대화에서 스킬 이름으로 호출:
+설치 후 대화에서 스킬 이름으로 호출:
 
 ```
 /integration-audit
