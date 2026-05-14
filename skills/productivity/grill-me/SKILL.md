@@ -1,6 +1,6 @@
 ---
 name: grill-me
-description: Interview the user relentlessly about a plan or design until reaching shared understanding, resolving each branch of the decision tree. Use when user wants to stress-test a plan, get grilled on their design, or mentions "grill me".
+description: 계획이나 설계에 대해 상호 이해에 도달할 때까지 결정 트리의 모든 분기를 해소하며 집요하게 인터뷰한다. 계획을 검증하고 싶거나, 설계에 대해 날카로운 질문을 받고 싶거나, "grill me"를 언급할 때 사용.
 source: https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me/SKILL.md
 ---
 

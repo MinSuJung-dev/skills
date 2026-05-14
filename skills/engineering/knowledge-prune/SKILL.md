@@ -1,6 +1,6 @@
 ---
 name: knowledge-prune
-description: Audit, clean, and optimize the .bugs/ knowledge base produced by the investigate skill. Use when the user says "정리해줘", "최적화해줘", "prune", "clean up bugs", "consolidate patterns", or after many bugs have accumulated and the knowledge base has grown stale or inconsistent.
+description: investigate 스킬이 만든 .bugs/ 지식 베이스를 감사하고 정리하고 최적화한다. "정리해줘", "최적화해줘", "prune", "clean up bugs", "consolidate patterns" 또는 버그가 많이 쌓여 지식 베이스가 오래되거나 일관성이 없어졌을 때 사용.
 ---
 
 # Knowledge Prune

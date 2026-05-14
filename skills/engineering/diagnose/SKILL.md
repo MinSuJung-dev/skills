@@ -1,6 +1,6 @@
 ---
 name: diagnose
-description: Disciplined diagnosis loop for hard bugs and performance regressions. Reproduce → minimise → hypothesise → instrument → fix → regression-test. Use when user says "diagnose this" / "debug this", reports a bug, says something is broken/throwing/failing, or describes a performance regression.
+description: 어려운 버그와 성능 회귀를 위한 체계적인 진단 루프. 재현 → 최소화 → 가설 → 계측 → 수정 → 회귀 테스트. "진단해줘", "디버그해줘", 버그 신고, 무언가 깨지거나 실패하거나 throws 한다고 할 때 사용.
 source: https://github.com/mattpocock/skills/blob/main/skills/engineering/diagnose/SKILL.md
 ---
 

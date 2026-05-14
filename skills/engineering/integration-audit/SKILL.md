@@ -1,6 +1,6 @@
 ---
 name: integration-audit
-description: Audit whether a recently implemented feature is actually complete. Use when the user says "audit", "verify", "double-check", "review before PR/merge", "should work but doesn't", "why isn't this working", or mentions a button/route/feature that looks done but isn't behaving. Reports findings with severity and confidence. Never modifies code without explicit user authorization.
+description: 최근 구현한 기능이 실제로 완성됐는지 감사한다. "감사해줘", "확인해줘", "PR 전에 검토", "동작해야 하는데 안 돼", "왜 안 되지", 또는 완성된 것처럼 보이는데 동작하지 않는 버튼/라우트/기능을 언급할 때 사용. 심각도와 신뢰도를 포함한 결과를 보고한다. 명시적 승인 없이는 코드를 수정하지 않는다.
 ---
 
 # Integration Audit

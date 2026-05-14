@@ -1,6 +1,6 @@
 ---
 name: investigate
-description: Investigate hard bugs and performance regressions with a disciplined loop. Maintains a persistent knowledge base under .bugs/ — bug cards, master index, and pattern library — so findings survive across sessions. Use when the user reports a bug, says "it still doesn't work", "I tried that already", "same error", "it's broken again", or reports a performance regression.
+description: 체계적인 루프로 버그와 성능 회귀를 조사한다. .bugs/ 아래에 버그 카드, 마스터 인덱스, 패턴 라이브러리로 구성된 지식 베이스를 유지해 세션이 바뀌어도 발견 내용을 잃지 않는다. 버그 신고, "여전히 안 돼", "이미 시도해봤어", "같은 에러", "또 터졌어", 성능 회귀 보고 시 사용.
 ---
 
 # Investigate
