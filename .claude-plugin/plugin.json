@@ -1,8 +1,10 @@
 {
   "name": "skills",
   "skills": [
+    "./skills/engineering/diagnose",
     "./skills/engineering/integration-audit",
     "./skills/engineering/investigate",
-    "./skills/engineering/knowledge-prune"
+    "./skills/engineering/knowledge-prune",
+    "./skills/productivity/grill-me"
   ]
 }

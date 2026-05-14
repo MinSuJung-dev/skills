@@ -20,9 +20,11 @@ claude plugin install skills
 설치 후 대화에서 스킬 이름으로 호출:
 
 ```
+/diagnose
 /integration-audit
 /investigate
 /knowledge-prune
+/grill-me
 ```
 
 ### Cursor / Windsurf
@@ -71,9 +73,16 @@ AI가 화면을 그리고, 컴포넌트를 만들고, 파일을 생성한다. �
 
 | Skill | 설명 |
 |-------|------|
+| [diagnose](./skills/engineering/diagnose/SKILL.md) | 버그/성능 회귀 진단 루프 — 재현 → 가설 → 계측 → 수정 → 회귀 테스트 |
 | [integration-audit](./skills/engineering/integration-audit/SKILL.md) | 구현이 실제로 완성됐는지 감사 — 빈 핸들러, 끊긴 라우트, 반쪽짜리 뮤테이션, 더미 데이터 탐지 |
-| [investigate](./skills/engineering/investigate/SKILL.md) | 재현 루프 기반 버그 디버깅 — 가설 추적, 세션 간 버그 카드 유지 |
+| [investigate](./skills/engineering/investigate/SKILL.md) | 재현 루프 기반 버그 디버깅 — 가설 추적, 세션 간 버그 카드 및 패턴 라이브러리 유지 |
 | [knowledge-prune](./skills/engineering/knowledge-prune/SKILL.md) | .bugs/ 지식 베이스 정리 및 최적화 — 중복 탐지, 패턴 통합, 오래된 레코드 정리 |
+
+### Productivity
+
+| Skill | 설명 |
+|-------|------|
+| [grill-me](./skills/productivity/grill-me/SKILL.md) | 계획/설계를 집요하게 인터뷰해서 결정 트리의 모든 분기를 해소 |
 
 ---
 
