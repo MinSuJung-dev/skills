@@ -25,6 +25,7 @@ claude plugin install skills
 /investigate
 /knowledge-prune
 /grill-me
+/apply-harness
 ```
 
 ### Cursor / Windsurf
@@ -73,6 +74,7 @@ AI가 화면을 그리고, 컴포넌트를 만들고, 파일을 생성한다. �
 
 | Skill | 설명 |
 |-------|------|
+| [apply-harness](./skills/engineering/apply-harness/SKILL.md) | 검증된 패턴을 새 프로젝트에 적용 — 프로젝트 분석 → 에이전트/스킬 자동 생성 |
 | [diagnose](./skills/engineering/diagnose/SKILL.md) | 버그/성능 회귀 진단 루프 — 재현 → 가설 → 계측 → 수정 → 회귀 테스트 |
 | [integration-audit](./skills/engineering/integration-audit/SKILL.md) | 구현이 실제로 완성됐는지 감사 — 빈 핸들러, 끊긴 라우트, 반쪽짜리 뮤테이션, 더미 데이터 탐지 |
 | [investigate](./skills/engineering/investigate/SKILL.md) | 재현 루프 기반 버그 디버깅 — 가설 추적, 세션 간 버그 카드 및 패턴 라이브러리 유지 |
