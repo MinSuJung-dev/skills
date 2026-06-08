@@ -1,5 +1,6 @@
 {
   "name": "skills",
+  "description": "AI coding agent skills — fix recurring failure modes across investigate, integration-audit, diagnose, knowledge-prune, grill-me, apply-harness.",
   "owner": {
     "name": "MinSuJung-dev",
     "url": "https://github.com/MinSuJung-dev"
@@ -8,7 +9,43 @@
     {
       "name": "skills",
       "source": "./",
-      "description": "AI-agnostic coding agent skills — integration-audit and investigate.",
+      "description": "All skills bundle — investigate, integration-audit, diagnose, knowledge-prune, grill-me, apply-harness.",
+      "version": "1.0.0"
+    },
+    {
+      "name": "investigate",
+      "source": "./skills/engineering/investigate",
+      "description": "Systematic bug investigation loop — bug card persistence, falsifiable hypotheses, pattern library.",
+      "version": "1.0.0"
+    },
+    {
+      "name": "integration-audit",
+      "source": "./skills/engineering/integration-audit",
+      "description": "Audit whether a feature is actually complete — dead handlers, broken routes, stub functions, hardcoded dummy data.",
+      "version": "1.0.0"
+    },
+    {
+      "name": "diagnose",
+      "source": "./skills/engineering/diagnose",
+      "description": "Structured bug and performance regression diagnosis loop — reproduce, hypothesise, fix, regression-test.",
+      "version": "1.0.0"
+    },
+    {
+      "name": "knowledge-prune",
+      "source": "./skills/engineering/knowledge-prune",
+      "description": "Audit and clean the .bugs/ knowledge base — deduplicate, consolidate patterns, archive stale records.",
+      "version": "1.0.0"
+    },
+    {
+      "name": "apply-harness",
+      "source": "./skills/engineering/apply-harness",
+      "description": "Apply orchestrator + specialist agent patterns to a new project — auto-generates CLAUDE.md, agents, and skill files.",
+      "version": "1.0.0"
+    },
+    {
+      "name": "grill-me",
+      "source": "./skills/productivity/grill-me",
+      "description": "Relentlessly interview a plan or design until every branch of the decision tree is resolved.",
       "version": "1.0.0"
     }
   ]

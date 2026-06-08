@@ -1,0 +1,7 @@
+{
+  "name": "knowledge-prune",
+  "version": "1.0.0",
+  "description": "Audit and clean the .bugs/ knowledge base — deduplicate cards, consolidate patterns, archive stale records.",
+  "author": {"name": "MinSuJung-dev", "url": "https://github.com/MinSuJung-dev"},
+  "skills": ["./"]
+}

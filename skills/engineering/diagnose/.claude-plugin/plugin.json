@@ -1,0 +1,7 @@
+{
+  "name": "diagnose",
+  "version": "1.0.0",
+  "description": "Structured bug and performance regression diagnosis loop — reproduce, minimise, hypothesise, instrument, fix, regression-test.",
+  "author": {"name": "MinSuJung-dev", "url": "https://github.com/MinSuJung-dev"},
+  "skills": ["./"]
+}

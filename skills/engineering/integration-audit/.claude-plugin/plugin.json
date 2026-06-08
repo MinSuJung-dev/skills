@@ -1,0 +1,7 @@
+{
+  "name": "integration-audit",
+  "version": "1.0.0",
+  "description": "Audit whether a feature is actually complete — dead handlers, broken routes, stub functions, hardcoded dummy data.",
+  "author": {"name": "MinSuJung-dev", "url": "https://github.com/MinSuJung-dev"},
+  "skills": ["./"]
+}

@@ -45,7 +45,39 @@ See [patterns/examples/python-backend.md](patterns/examples/python-backend.md) �
 
 4. **기존 에이전트/스킬 확인** — `.claude/agents/`, `.claude/skills/` 존재 여부 확인
 
-## Phase 3: 하네스 설계
+## Phase 3: 옵션 선택
+
+프로젝트 분석 결과를 요약해 보여준 뒤, 사용자에게 다음 옵션을 묻는다. **각 항목을 yes/no로 선택받는다.**
+
+---
+
+**[옵션 A] 지식 베이스 관리** (기본값: yes)
+
+버그 수정 에이전트가 `investigate` 스킬 프로토콜을 따른다.
+- 모든 버그 작업 시작 시 `.bugs/INDEX.md`를 먼저 조회
+- 버그 카드(`.bugs/bugs/BUG-NNN.md`) 생성 및 세션 간 유지
+- 버그 종료 시 패턴 라이브러리(`.bugs/patterns/`) 자동 업데이트
+- `.bugs/` 카드가 10개 이상 누적되면 `/knowledge-prune` 실행 안내
+
+yes → Phase 4에서 bugfix 에이전트에 investigate 워크플로우 wiring, CLAUDE.md에 지식 베이스 섹션 추가
+no → 표준 bugfix-pipeline 사용
+
+---
+
+**[옵션 B] 구현 완성도 자동 감사** (기본값: yes)
+
+기능 개발 에이전트가 작업 완료 전 `integration-audit` 프로토콜을 실행한다.
+- 빈 핸들러, 끊긴 라우트, 더미 데이터 자동 탐지
+- 발견 시 사용자에게 보고 후 승인받아 수정
+
+yes → Phase 4에서 feature 에이전트에 integration-audit 단계 추가
+no → 표준 feature-pipeline 사용
+
+---
+
+선택 결과를 Phase 4 산출물 생성에 반영한다.
+
+## Phase 4: 하네스 설계 및 산출물 생성
 
 패턴 파일에서 이 프로젝트에 맞는 구조를 선택한다.
 
@@ -59,11 +91,8 @@ See [patterns/examples/python-backend.md](patterns/examples/python-backend.md) �
 - 각 스킬은 Phase 구조 (진단 → 구현 → 검증)
 - 탈출구(escape hatch) 규칙 반드시 포함
 
-## Phase 4: 산출물 생성
-
-다음 파일을 생성한다:
-
 ### CLAUDE.md (프로젝트 루트)
+
 ```
 # {프로젝트명} — 프로젝트 지도
 ## 기술 스택
@@ -74,8 +103,20 @@ See [patterns/examples/python-backend.md](patterns/examples/python-backend.md) �
 ## 오케스트레이션 원칙
 ```
 
+옵션 A(지식 베이스)가 yes면 다음 섹션을 추가한다:
+
+```
+## 지식 베이스
+- 모든 버그 작업은 .bugs/INDEX.md 조회로 시작한다
+- 버그 카드 위치: .bugs/bugs/BUG-NNN.md
+- 패턴 라이브러리: .bugs/patterns/<category>.md
+- 카드 10개 이상 누적 시 /knowledge-prune 실행
+```
+
 ### .claude/agents/{name}.md
+
 각 전문 에이전트 정의:
+
 ```yaml
 ---
 name: {name}
@@ -88,8 +129,38 @@ model: opus
 ## 입력/출력
 ```
 
+**옵션 A(지식 베이스)가 yes면** bugfix 에이전트에 다음 섹션을 추가한다:
+
+```markdown
+## 지식 베이스 프로토콜
+
+모든 버그 작업은 아래 순서를 따른다. 건너뛰지 않는다.
+
+1. **조회** — `.bugs/INDEX.md`에서 동일/유사 버그 확인. 기존 카드가 있으면 읽고 시작.
+2. **카드 생성** — 없으면 다음 BUG-NNN id 부여, `.bugs/bugs/BUG-NNN-{slug}.md` 생성, INDEX.md에 행 추가.
+3. **재현 신호 구축** — 패스/페일을 판별하는 실행 가능한 신호를 먼저 만든다.
+4. **가설 수립** — 반증 가능한 가설 3–5개를 세우고 한 번에 하나씩 검증한다.
+5. **수정 + 회귀 테스트** — 범위 밖 파일 수정은 사용자 승인 후.
+6. **카드 종료** — 루트 원인, 수정 내용, 인접 위험 기록. `.bugs/patterns/<category>.md`에 예방 규칙 추가.
+```
+
+**옵션 B(구현 완성도 감사)가 yes면** feature 에이전트에 다음 섹션을 추가한다:
+
+```markdown
+## 완성도 감사 프로토콜
+
+기능 구현 완료를 선언하기 전에 반드시 실행한다.
+
+1. UI 레이어 — onClick/onTap/onPressed 핸들러가 실제로 연결되어 있는가
+2. 라우팅 레이어 — 새 라우트가 등록됐고 진입점이 존재하는가
+3. 상태/데이터 레이어 — API 연결이 실제로 이루어졌는가, 더미 데이터가 남아 있지 않은가
+4. 발견 사항을 심각도/신뢰도 포함해 보고하고, 승인 후 수정한다
+```
+
 ### .claude/skills/{name}/skill.md
+
 각 워크플로우 스킬:
+
 ```yaml
 ---
 name: {name}

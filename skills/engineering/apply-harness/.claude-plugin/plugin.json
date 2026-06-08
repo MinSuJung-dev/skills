@@ -1,0 +1,7 @@
+{
+  "name": "apply-harness",
+  "version": "1.0.0",
+  "description": "Apply validated orchestrator + specialist agent patterns to a new project — auto-generates CLAUDE.md, agents, and skill files.",
+  "author": {"name": "MinSuJung-dev", "url": "https://github.com/MinSuJung-dev"},
+  "skills": ["./"]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "investigate",
+  "version": "1.0.0",
+  "description": "Systematic bug investigation loop — bug card persistence, falsifiable hypotheses, pattern library. Prevents fixing the same bug twice.",
+  "author": {"name": "MinSuJung-dev", "url": "https://github.com/MinSuJung-dev"},
+  "skills": ["./"]
+}

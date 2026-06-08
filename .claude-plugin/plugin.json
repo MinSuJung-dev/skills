@@ -1,6 +1,13 @@
 {
   "name": "skills",
+  "version": "1.0.0",
+  "description": "All skills bundle — investigate, integration-audit, diagnose, knowledge-prune, grill-me, apply-harness.",
+  "author": {
+    "name": "MinSuJung-dev",
+    "url": "https://github.com/MinSuJung-dev"
+  },
   "skills": [
+    "./skills/engineering/apply-harness",
     "./skills/engineering/diagnose",
     "./skills/engineering/integration-audit",
     "./skills/engineering/investigate",
