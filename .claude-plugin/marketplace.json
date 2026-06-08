@@ -10,7 +10,7 @@
       "name": "skills",
       "source": "./",
       "description": "All skills bundle — investigate, integration-audit, diagnose, knowledge-prune, grill-me, apply-harness.",
-      "version": "1.0.0"
+      "version": "1.1.0"
     },
     {
       "name": "investigate",
