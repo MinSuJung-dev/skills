@@ -8,6 +8,8 @@
 ├── bugs/
 │   └── BUG-NNN-slug.md
 └── patterns/
+    ├── dead.md
+    ├── temporary.md
     ├── lifecycle-leak.md
     ├── half-wired.md
     ├── orphaned.md
@@ -34,7 +36,7 @@
 ---
 id: BUG-NNN
 title:
-category: lifecycle-leak | half-wired | orphaned | stub | schema-mismatch | pattern-violation
+category: dead | stub | half-wired | orphaned | temporary | lifecycle-leak | schema-mismatch | pattern-violation
 severity: critical | high | medium | low
 status: investigating | reproduced | patched | verified | abandoned
 tier: small | large

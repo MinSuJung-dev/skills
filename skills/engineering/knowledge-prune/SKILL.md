@@ -1,6 +1,6 @@
 ---
 name: knowledge-prune
-description: investigate 스킬이 만든 .bugs/ 지식 베이스를 감사하고 정리하고 최적화한다. "정리해줘", "최적화해줘", "prune", "clean up bugs", "consolidate patterns" 또는 버그가 많이 쌓여 지식 베이스가 오래되거나 일관성이 없어졌을 때 사용.
+description: investigate 스킬이 만든 .bugs/ 지식 베이스를 감사하고 정리하고 최적화한다. ".bugs 정리해줘", "버그 지식 베이스 정리", "버그 카드 정리", "prune bugs", "clean up .bugs", "consolidate patterns" 또는 버그 카드가 많이 쌓여 지식 베이스가 오래되거나 일관성이 없어졌을 때 사용.
 ---
 
 # Knowledge Prune

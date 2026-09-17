@@ -37,8 +37,8 @@ Before tracing, check if the element is runtime-registered (DI container, codege
 - **C. Does the UI reflect the change?** Refetch/invalidate/setState/subscription — at least one. Loading and error states for async — if none → half-wired.
 - **D. Is the element reachable and consumed?** No entry path or no consumer → orphaned.
 
-**Step 5 — Classify** *(use only these six types)*
-`dead` | `stub` | `half-wired` | `orphaned` | `temporary` | `lifecycle-leak`
+**Step 5 — Classify** *(use only these eight types — same taxonomy as `investigate`)*
+`dead` | `stub` | `half-wired` | `orphaned` | `temporary` | `lifecycle-leak` | `schema-mismatch` | `pattern-violation`
 Severity: `critical` | `high` | `medium` | `low`
 Confidence: `high` | `medium` | `low`
 

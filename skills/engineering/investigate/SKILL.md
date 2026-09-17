@@ -1,6 +1,6 @@
 ---
 name: investigate
-description: 체계적인 루프로 버그와 성능 회귀를 조사한다. .bugs/ 아래에 버그 카드, 마스터 인덱스, 패턴 라이브러리로 구성된 지식 베이스를 유지해 세션이 바뀌어도 발견 내용을 잃지 않는다. 버그 신고, "여전히 안 돼", "이미 시도해봤어", "같은 에러", "또 터졌어", 성능 회귀 보고 시 사용.
+description: 체계적인 루프로 버그와 성능 회귀를 조사한다. .bugs/ 아래에 버그 카드, 마스터 인덱스, 패턴 라이브러리로 구성된 지식 베이스를 유지해 세션이 바뀌어도 발견 내용을 잃지 않는다. 버그 신고, "진단해줘", "디버그해줘", "여전히 안 돼", "이미 시도해봤어", "같은 에러", "또 터졌어", 무언가 깨지거나 throws 한다고 할 때, 성능 회귀 보고 시 사용. 기록 없이 단발성으로 진단하는 quick 모드 포함.
 ---
 
 # Investigate
@@ -8,6 +8,12 @@ description: 체계적인 루프로 버그와 성능 회귀를 조사한다. .bu
 Discipline for hard bugs. Designed against the AI failure mode of fixing the same bug twice.
 
 See [BUG-CARD.md](BUG-CARD.md) for bug card and index schemas. See [PATTERNS.md](PATTERNS.md) for pattern library structure.
+
+## Mode
+
+- **full** (default) — all phases, bug card persisted in `.bugs/`.
+- **quick** — one-off diagnosis, no `.bugs/` writes. Skip card creation in Phase 0 (still *read* INDEX.md if it exists), skip card updates, skip Phase 8 steps 1–3. Use when the user says "진단만", "quick", "기록 없이", or the project has no `.bugs/` and the bug is small.
+- Quick bug turns out large (Phase 1) or hits a 2nd failed attempt → ask to switch to full.
 
 ## Operating Principles
 
@@ -48,7 +54,9 @@ Re-run the Phase 2 loop. ✅ original symptom gone, no new symptom. ❌ otherwis
 1. Fill post-mortem on the card (root cause, fix, what would have prevented, adjacent risk).
 2. Add a prevention rule to `.bugs/patterns/<category>.md` tagged `<!-- BUG-NNN -->`.
 3. Update INDEX.md status to `verified`.
-4. Remove all `[DEBUG-...]` instrumentation.
+4. Remove all `[DEBUG-...]` instrumentation and throwaway prototypes.
+5. Note the confirmed hypothesis in the commit/PR message.
+6. Root cause is architectural → report it as a separate architecture-review item; don't widen this fix.
 
 ## Anti-loop heuristics
 

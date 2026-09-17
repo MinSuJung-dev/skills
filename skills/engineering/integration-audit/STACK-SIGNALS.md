@@ -1,7 +1,17 @@
 # Stack-Specific Detection Signals
 
 Use these signals during Step 4 (Trace) to identify issues specific to each stack.
-Map every finding back to one of the six canonical types: `dead` `stub` `half-wired` `orphaned` `temporary` `lifecycle-leak`
+Map every finding back to one of the eight canonical types (shared with `investigate`): `dead` `stub` `half-wired` `orphaned` `temporary` `lifecycle-leak` `schema-mismatch` `pattern-violation`
+
+## All stacks
+
+| Signal | Type |
+|--------|------|
+| Empty handler body, or handler that only logs | dead |
+| TODO / FIXME / `UnimplementedError` / hardcoded return value | stub |
+| Hardcoded dummy data, debug-only flags left enabled | temporary |
+| API response / DB column shape differs from the model | schema-mismatch |
+| Project convention broken (naming, layer boundary, data flow direction) | pattern-violation |
 
 ## Flutter / Mobile
 

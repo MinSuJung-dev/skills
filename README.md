@@ -25,7 +25,6 @@ claude plugin install skills
 ```bash
 claude plugin install investigate
 claude plugin install integration-audit
-claude plugin install diagnose
 claude plugin install knowledge-prune
 claude plugin install apply-harness
 claude plugin install grill-me
@@ -36,7 +35,6 @@ claude plugin install grill-me
 ```
 /investigate
 /integration-audit
-/diagnose
 /knowledge-prune
 /apply-harness
 /grill-me
@@ -48,9 +46,8 @@ claude plugin install grill-me
 
 | 스킬 | 한 줄 요약 | 언제 |
 |------|-----------|------|
-| `/investigate` | 버그 카드 + 패턴 라이브러리로 같은 버그 두 번 안 고치기 | 버그 신고, "또 터졌어" |
+| `/investigate` | 버그 카드 + 패턴 라이브러리로 같은 버그 두 번 안 고치기 (기록 없는 quick 모드 포함) | 버그 신고, "진단해줘", "또 터졌어" |
 | `/integration-audit` | 빈 핸들러·끊긴 라우트·더미 데이터 탐지 | PR 전, "왜 안 되지" |
-| `/diagnose` | 재현 → 가설 → 계측 → 수정 단발성 진단 루프 | 처음 마주치는 버그 |
 | `/knowledge-prune` | `.bugs/` 중복·방치·반증 규칙 정리 | 지식 베이스가 엉킨 느낌 |
 | `/grill-me` | 계획/설계를 결정 트리 끝까지 파고드는 인터뷰 | 설계 검증 |
 | `/apply-harness` | 프로젝트에 에이전트 체계 + 지식 베이스 wiring 자동 구축 | 새 프로젝트 셋업 |
@@ -65,8 +62,11 @@ claude plugin install grill-me
 - 재현 가능한 패스/페일 신호를 먼저 만든 다음 가설을 세운다
 - 반증 가능한 가설 3–5개를 한 번에 하나씩 검증한다
 - 버그를 닫을 때마다 패턴 라이브러리에 교훈을 남겨 다음번에 더 빠르게 잡는다
+- **quick 모드**: 기록을 남기지 않는 단발성 진단 (재현 → 가설 → 계측 → 수정 → 회귀 테스트). "진단만 해줘", "기록 없이"라고 하면 이 모드로 동작한다
 
-**언제 쓰나**: 버그 신고, "여전히 안 돼", "이미 시도해봤어", "또 터졌어"
+**언제 쓰나**: 버그 신고, "진단해줘", "여전히 안 돼", "이미 시도해봤어", "또 터졌어"
+
+> 이전의 `/diagnose` 스킬은 investigate의 quick 모드로 통합됐다. `diagnose`를 개별 설치했다면 `claude plugin uninstall diagnose` 후 `investigate`를 설치한다.
 
 ---
 
@@ -79,16 +79,6 @@ claude plugin install grill-me
 - 승인 후에만 수정
 
 **언제 쓰나**: PR 전, 머지 전, "동작해야 하는데 왜 안 되지"
-
----
-
-### `/diagnose` — 체계적인 진단 루프
-
-버그/성능 회귀를 체계적으로 짚는다. `investigate`와 달리 지식 베이스를 유지하지 않으며 단발성 진단에 집중한다.
-
-재현 → 최소화 → 가설 3–5개 → 계측 → 수정 → 회귀 테스트 순서로 진행.
-
-**언제 쓰나**: "진단해줘", "디버그해줘", 처음 마주치는 버그나 성능 문제
 
 ---
 
@@ -144,7 +134,6 @@ feature 에이전트가 작업 완료 선언 전 `integration-audit` 프로토�
 ```
 skills/engineering/investigate/SKILL.md
 skills/engineering/integration-audit/SKILL.md
-skills/engineering/diagnose/SKILL.md
 skills/engineering/knowledge-prune/SKILL.md
 skills/productivity/grill-me/SKILL.md
 skills/engineering/apply-harness/SKILL.md

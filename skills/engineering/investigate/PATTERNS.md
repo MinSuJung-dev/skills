@@ -23,10 +23,15 @@ Pattern files accumulate prevention rules from closed bugs. They are the long-te
 
 ## Categories and Stack Signals
 
+Eight canonical categories, shared with `integration-audit`.
+
+### dead
+Handler exists but does nothing: empty body, log-only.
+
+
 ### lifecycle-leak
 StreamSubscription / listener with no dispose, useEffect with no cleanup, duplicate subscriptions.
 - Flutter: `StreamSubscription` with no `cancel()` in `dispose()`
-- Flutter: `print` / `debugPrint` not gated by `kDebugMode`
 - Web: `useEffect` with subscriptions/timers but no cleanup return
 
 ### half-wired
@@ -41,6 +46,10 @@ Route defined but never pushed, component imported nowhere, service registered b
 - Flutter: widget class referenced in no `build()`
 - Web: component exported but no import references it
 - Backend: new route handler not mounted on the router
+
+### temporary
+Leftovers meant to be removed: hardcoded dummy data, ungated debug output, debug flags left on.
+- Flutter: `print` / `debugPrint` not gated by `kDebugMode`
 
 ### stub
 TODO / FIXME / UnimplementedError, empty handler body, function returning hardcoded null.
