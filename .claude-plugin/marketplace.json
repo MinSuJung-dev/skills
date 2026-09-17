@@ -1,6 +1,6 @@
 {
   "name": "skills",
-  "description": "AI coding agent skills — fix recurring failure modes across investigate, integration-audit, knowledge-prune, grill-me, apply-harness.",
+  "description": "AI coding agent skills — fix recurring failure modes across investigate, integration-audit, knowledge-prune, grill-me, apply-harness, ddd.",
   "owner": {
     "name": "MinSuJung-dev",
     "url": "https://github.com/MinSuJung-dev"
@@ -9,8 +9,8 @@
     {
       "name": "skills",
       "source": "./",
-      "description": "All skills bundle — investigate, integration-audit, knowledge-prune, grill-me, apply-harness.",
-      "version": "1.2.0"
+      "description": "All skills bundle — investigate, integration-audit, knowledge-prune, grill-me, apply-harness, ddd.",
+      "version": "1.3.0"
     },
     {
       "name": "investigate",
@@ -40,6 +40,12 @@
       "name": "grill-me",
       "source": "./skills/productivity/grill-me",
       "description": "Relentlessly interview a plan or design until every branch of the decision tree is resolved.",
+      "version": "1.0.0"
+    },
+    {
+      "name": "ddd",
+      "source": "./skills/engineering/ddd",
+      "description": "Domain engineering protocol — domain storytelling, ubiquitous language, bounded contexts, aggregates, design review gate, implementation, DDD review. Modular monolith first, no over-engineering. Persists to docs/domain/.",
       "version": "1.0.0"
     }
   ]

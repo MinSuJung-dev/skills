@@ -28,6 +28,7 @@ claude plugin install integration-audit
 claude plugin install knowledge-prune
 claude plugin install apply-harness
 claude plugin install grill-me
+claude plugin install ddd
 ```
 
 설치 후 대화에서 바로 호출:
@@ -38,6 +39,7 @@ claude plugin install grill-me
 /knowledge-prune
 /apply-harness
 /grill-me
+/ddd
 ```
 
 ---
@@ -51,6 +53,7 @@ claude plugin install grill-me
 | `/knowledge-prune` | `.bugs/` 중복·방치·반증 규칙 정리 | 지식 베이스가 엉킨 느낌 |
 | `/grill-me` | 계획/설계를 결정 트리 끝까지 파고드는 인터뷰 | 설계 검증 |
 | `/apply-harness` | 프로젝트에 에이전트 체계 + 지식 베이스 wiring 자동 구축 | 새 프로젝트 셋업 |
+| `/ddd` | 도메인 스토리 → 용어집 → 경계 → 애그리거트 → 설계 검증 → 구현 → DDD 리뷰 | 도메인 모델링, DDD 리뷰, 레거시 도메인 추출 |
 
 ---
 
@@ -127,6 +130,29 @@ feature 에이전트가 작업 완료 선언 전 `integration-audit` 프로토�
 
 ---
 
+### `/ddd` — 도메인 엔지니어링 프로토콜
+
+DDD를 가르치는 스킬이 아니라 **요구사항 → 도메인 분석 → 설계 → 검증 → 구현 → 리뷰** 순서를 강제하는 개발 프로토콜. 산출물은 `docs/domain/`에 남아 세션이 바뀌어도 이어진다.
+
+| 모드 | 하는 일 |
+|------|--------|
+| `discover` | 도메인 스토리(`N. 행위자 –활동→ 업무객체`) → 용어집(한국어 ↔ 코드명) → 규칙·예시 → 이벤트 후보. 레거시는 코드에서 as-is 스토리 추정 |
+| `design` | 서브도메인·컨텍스트 맵 → 캔버스 → 애그리거트(일관성 경계 기준) → 유스케이스 → **설계 검증 게이트** (미통과 시 코드 금지) |
+| `implement` | Given-When-Then 도메인 규칙 테스트 먼저, 계층(Domain / Application / Infrastructure) 분리 구현 |
+| `review` | 새 서브에이전트나 Codex에서 실행해 용어 어긋남·계층 위반·추측된 규칙·과잉 설계를 `file:line`으로 보고 |
+
+핵심 규칙:
+- 복잡한 비즈니스 규칙에만 DDD, 단순 CRUD는 단순하게
+- 모듈형 모놀리스가 기본, MSA는 근거가 확인될 때만 (ADR)
+- DB 테이블로 애그리거트를 만들지 않고, 도메인은 프레임워크를 모른다
+- 문서·코드에 없는 비즈니스 규칙은 추측하지 않는다
+- 기존 시스템은 API 계약·마이그레이션·기존 테스트를 확인하며 점진적으로
+- 판단 우선순위: 비즈니스 규칙 > 기존 아키텍처 > 불변식 > 컨텍스트 경계 > 컨벤션 > 프레임워크
+
+**언제 쓰나**: "DDD로 해줘", "도메인 모델링", "바운디드 컨텍스트 나눠줘", "유비쿼터스 언어 정리", "DDD 리뷰", 레거시에서 도메인 추출
+
+---
+
 ## Cursor / Windsurf / 기타 AI
 
 원하는 스킬의 `SKILL.md` 내용을 `.cursor/rules`, `.windsurfrules`, 또는 시스템 프롬프트에 붙여넣는다.
@@ -137,6 +163,7 @@ skills/engineering/integration-audit/SKILL.md
 skills/engineering/knowledge-prune/SKILL.md
 skills/productivity/grill-me/SKILL.md
 skills/engineering/apply-harness/SKILL.md
+skills/engineering/ddd/SKILL.md
 ```
 
 ---
