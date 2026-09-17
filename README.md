@@ -52,7 +52,7 @@ claude plugin install ddd
 | `/integration-audit` | 빈 핸들러·끊긴 라우트·더미 데이터 탐지 | PR 전, "왜 안 되지" |
 | `/knowledge-prune` | `.bugs/` 중복·방치·반증 규칙 정리 | 지식 베이스가 엉킨 느낌 |
 | `/grill-me` | 계획/설계를 결정 트리 끝까지 파고드는 인터뷰 | 설계 검증 |
-| `/apply-harness` | 프로젝트에 에이전트 체계 + 지식 베이스 wiring 자동 구축 | 새 프로젝트 셋업 |
+| `/apply-harness` | 프로젝트에 에이전트 체계 자동 구축 + 옵션 wiring (지식 베이스 · 완성도 감사 · DDD) | 새 프로젝트 셋업 |
 | `/ddd` | 도메인 스토리 → 용어집 → 경계 → 애그리거트 → 설계 검증 → 구현 → DDD 리뷰 | 도메인 모델링, DDD 리뷰, 레거시 도메인 추출 |
 
 ---
@@ -164,6 +164,8 @@ DDD를 가르치는 스킬이 아니라 **요구사항 → 도메인 분석 → 
 ## Cursor / Windsurf / 기타 AI
 
 원하는 스킬의 `SKILL.md` 내용을 `.cursor/rules`, `.windsurfrules`, 또는 시스템 프롬프트에 붙여넣는다.
+
+`SKILL.md`가 같은 폴더의 참고 파일(`*.md`, apply-harness는 `patterns/` 포함)을 링크하는 스킬은 **참고 파일도 함께 넣어야** 한다. 빠지면 템플릿·체크리스트 없이 동작한다.
 
 ```
 skills/engineering/investigate/SKILL.md
