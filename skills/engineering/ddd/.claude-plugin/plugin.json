@@ -1,6 +1,6 @@
 {
   "name": "ddd",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Domain engineering protocol — domain storytelling, ubiquitous language, bounded contexts, aggregates, design review gate, implementation, DDD review. Modular monolith first, no over-engineering. Persists to docs/domain/.",
   "author": {
     "name": "MinSuJung-dev",
