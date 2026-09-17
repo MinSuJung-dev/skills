@@ -10,7 +10,7 @@
       "name": "skills",
       "source": "./",
       "description": "All skills bundle — investigate, integration-audit, knowledge-prune, grill-me, apply-harness, ddd.",
-      "version": "1.3.0"
+      "version": "1.4.0"
     },
     {
       "name": "investigate",
@@ -33,8 +33,8 @@
     {
       "name": "apply-harness",
       "source": "./skills/engineering/apply-harness",
-      "description": "Apply orchestrator + specialist agent patterns to a new project — auto-generates CLAUDE.md, agents, and skill files.",
-      "version": "1.0.1"
+      "description": "Apply orchestrator + specialist agent patterns to a new project — auto-generates CLAUDE.md, agents, and skill files. Optional wiring: investigate knowledge base, integration-audit, ddd domain engineering.",
+      "version": "1.1.0"
     },
     {
       "name": "grill-me",

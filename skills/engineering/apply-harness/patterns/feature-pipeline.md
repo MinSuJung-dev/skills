@@ -13,6 +13,8 @@
 1. `_workspace/` 디렉토리 생성
 2. 요구사항을 `_workspace/00_requirements.md`에 저장
 
+> 옵션 C(DDD)가 켜져 있으면 architect는 ddd 설계 게이트 통과 후에만 spec을 쓰고, 스토리·규칙이 없으면 "discover 필요"로 반환한다. 이때 메인이 사용자와 `/ddd discover`를 진행한 뒤 Phase 1을 다시 시작한다. qa는 ddd review 체크를 추가로 수행한다. (templates.md 참조)
+
 ## Phase 1: 설계 (architect 에이전트)
 
 **입력:** 사용자 요구사항, 기존 유사 모듈/컴포넌트

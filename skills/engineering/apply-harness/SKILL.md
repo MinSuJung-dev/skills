@@ -44,33 +44,19 @@ See [patterns/templates.md](patterns/templates.md) — 산출물 템플릿 (CLAU
 
 ## Phase 3: 옵션 선택
 
-프로젝트 분석 결과를 요약해 보여준 뒤, 사용자에게 다음 옵션을 묻는다. **각 항목을 yes/no로 선택받는다.**
-
----
+프로젝트 분석 결과를 요약해 보여준 뒤, 사용자에게 다음 옵션을 **각각 yes/no로** 묻는다.
 
 **[옵션 A] 지식 베이스 관리** (기본값: yes)
-
-버그 수정 에이전트가 `investigate` 스킬 프로토콜을 따른다.
-- 모든 버그 작업 시작 시 `.bugs/INDEX.md`를 먼저 조회
-- 버그 카드(`.bugs/bugs/BUG-NNN.md`) 생성 및 세션 간 유지
-- 버그 종료 시 패턴 라이브러리(`.bugs/patterns/`) 자동 업데이트
-- `.bugs/` 카드가 10개 이상 누적되면 `/knowledge-prune` 실행 안내
-
-yes → Phase 4에서 bugfix 에이전트에 investigate 워크플로우 wiring, CLAUDE.md에 지식 베이스 섹션 추가
-no → 표준 bugfix-pipeline 사용
-
----
+bugfix 에이전트가 `investigate` 프로토콜을 따른다. 버그 작업마다 `.bugs/INDEX.md` 조회 → 버그 카드 생성·유지 → 종료 시 패턴 라이브러리 갱신. 카드 10개 이상이면 `/knowledge-prune` 안내.
+yes → bugfix 에이전트에 investigate 워크플로우, CLAUDE.md에 지식 베이스 섹션 / no → 표준 bugfix-pipeline
 
 **[옵션 B] 구현 완성도 자동 감사** (기본값: yes)
+feature 에이전트가 완료 선언 전 `integration-audit` 프로토콜로 빈 핸들러·끊긴 라우트·더미 데이터를 탐지하고, 보고 후 승인받아 수정한다.
+yes → feature 에이전트에 감사 단계 / no → 표준 feature-pipeline
 
-기능 개발 에이전트가 작업 완료 전 `integration-audit` 프로토콜을 실행한다.
-- 빈 핸들러, 끊긴 라우트, 더미 데이터 자동 탐지
-- 발견 시 사용자에게 보고 후 승인받아 수정
-
-yes → Phase 4에서 feature 에이전트에 integration-audit 단계 추가
-no → 표준 feature-pipeline 사용
-
----
+**[옵션 C] DDD 도메인 엔지니어링** (기본값: no — 복잡한 비즈니스 규칙이 보이거나 `docs/domain/`이 있으면 yes 추천)
+기능 개발이 `ddd` 스킬 프로토콜을 따른다. architect는 `design` 모드(설계 검증 게이트 통과 후에만 spec), dev는 `implement` 규칙, qa는 `review` 모드. 단순 CRUD 기능은 architect가 판정하고 게이트를 건너뛴다.
+yes → `ddd` 스킬 설치 확인 (없으면 `claude plugin install ddd` 안내), architect/dev/qa 에이전트와 CLAUDE.md에 DDD 섹션 / no → 추가 없음
 
 선택 결과를 Phase 4 산출물 생성에 반영한다.
 
@@ -90,7 +76,7 @@ no → 표준 feature-pipeline 사용
 
 ### 산출물
 
-[patterns/templates.md](patterns/templates.md)의 템플릿으로 생성한다. 옵션 A/B 선택에 따라 해당 섹션을 추가한다.
+[patterns/templates.md](patterns/templates.md)의 템플릿으로 생성한다. 옵션 A/B/C 선택에 따라 해당 섹션을 추가한다.
 
 - `CLAUDE.md` (프로젝트 루트)
 - `.claude/agents/{name}.md` — 전문 에이전트마다 1개
